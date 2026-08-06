@@ -390,3 +390,8 @@ body.top-page .site-header {
 .menubar.close {
     background-color: red !important;
 }
+/* サブページのロゴは改行しない */
+body.sub-page .header-logo {
+    white-space: nowrap;
+    margin-right: 40px;
+}
