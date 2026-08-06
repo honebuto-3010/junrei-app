@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="日本の神社やお寺を探訪する">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="food.css">
+    <link rel="stylesheet" href="style.css">
+    <title>日本巡礼</title>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-ofuda">
+        <a href="travel.html" class="ofuda-mini tilt1"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">旅</div></a>
+        <a href="food.html" class="ofuda-mini tilt2"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">食</div></a>
+        <a href="history.html" class="ofuda-mini tilt3"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">歴</div></a>
+        <a href="manner.html" class="ofuda-mini tilt1"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">作</div></a>
+        <a href="national.html" class="ofuda-mini tilt2"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">名</div></a>
+    </div>
+
+    <div class="header-logo">日本巡礼</div>
+
+    <div id="menu">
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+    </div>
+</header>
+
+<div class="mag-header">
+    <h2>巡礼の途中で出会った味 ─ 旅グルメ記</h2>
+</div>
+
+<section class="mag-article">
+    <p class="mag-text">
+        巡礼の旅では、その土地ならではの食べ物との出会いも楽しみのひとつ。
+        ここでは、旅の途中で出会った印象深い料理を紹介します。
+        その味は、旅の記憶とともに今も鮮明に残っています。
+    </p>
+</section>
+
+<!-- ▼ 撮影フォーム（和風に整えた） -->
+<section class="mag-article">
+    <h3>旅グルメを記録する</h3>
+
+    <p class="mag-text">スマホで撮影して、そのまま旅レポートに追加できます。</p>
+
+    <input type="file" id="foodPhoto" accept="image/*" capture="camera">
+
+    <img id="previewFood" style="width:100%; max-width:300px; margin-top:10px; display:block;">
+
+    <label class="mag-text">料理名・店名</label>
+    <input type="text" id="foodTitle" class="food-input">
+
+    <label class="mag-text">感想・メモ</label>
+    <textarea id="foodComment" class="food-textarea"></textarea>
+
+    <button id="saveFood" class="food-button">保存する</button>
+</section>
+
+<!-- ▼ 自動追加される旅グルメ記事 -->
+<div id="food-list"></div>
+
+<section class="mag-article">
+    <h3>旅と食の関係</h3>
+    <p class="mag-text">
+        旅先で食べた料理は、その土地の空気や人の温かさと結びついて記憶に残る。
+        だからこそ、巡礼の旅には「食」も欠かせない要素だと感じている。
+        これからも、心に残る味との出会いを楽しみに旅を続けたい。
+    </p>
+
+<div class="bottom-nav">
+    <a href="index.html" class="bottom-item">
+        <img src="/日本巡礼/images/icon_150381_64.png" class="bottom-icon">
+        <span class="bottom-label">Home</span>
+    </a>
+</div>
+
+</section>
+
+<script src="food.js"></script>
+
+</body>
+</html>

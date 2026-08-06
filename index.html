@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#4a4a4a">
+    <meta name="description" content="日本の神社やお寺を探訪する">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>日本巡礼</title>
+  </head>
+<body class="top-page">
+
+    <!-- ============================
+         透明ヘッダー ＋ ミニお札5枚
+    ============================= -->
+    <header class="site-header">
+
+        <!-- ミニお札（header に貼る） -->
+        <div class="header-ofuda">
+
+            <a href="travel.html" class="ofuda-mini tilt1">
+                <div class="ofuda-tape-mini"></div>
+                <div class="ofuda-mini-title">旅</div>
+            </a>
+
+            <a href="food.html" class="ofuda-mini tilt2">
+                <div class="ofuda-tape-mini"></div>
+                <div class="ofuda-mini-title">食</div>
+            </a>
+
+            <a href="history.html" class="ofuda-mini tilt3">
+                <div class="ofuda-tape-mini"></div>
+                <div class="ofuda-mini-title">歴</div>
+            </a>
+
+            <a href="manner.html" class="ofuda-mini tilt1">
+                <div class="ofuda-tape-mini"></div>
+                <div class="ofuda-mini-title">作</div>
+            </a>
+
+            <a href="national.html" class="ofuda-mini tilt2">
+                <div class="ofuda-tape-mini"></div>
+                <div class="ofuda-mini-title">名</div>
+            </a>
+
+        </div>
+
+        <!-- ロゴ -->
+        <div class="header-logo">日本巡礼</div>
+    </header>
+        <!-- ハンバーガーメニュー -->
+        <div id="menu">
+            <div class="menubar"></div>
+            <div class="menubar"></div>
+            <div class="menubar"></div>
+        </div>
+            <nav class="menu-links">
+                  <ul>
+                      <li><a href="history.html">日本巡礼ー歴史と作法</a></li>
+                      <li><a href="national.html">巡礼ルート</a></li>
+                      <li><a href="manner.html">マナーについて</a></li>
+                      <li><a href="travel.html">旅のレポート</a></li>
+                      <li><a href="food.html">巡礼グルメ</a></li>
+                  </ul>
+           </nav>
+
+    <!-- ============================
+         背景グリッド（4枚写真）
+    ============================= -->
+    <div class="bg-grid">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+
+        <!-- 朱色フィルター（任意） -->
+        <div class="bg-filter"></div>
+    </div>
+
+    <!-- ============================
+         前面コンテンツ
+    ============================= -->
+    <div class="content">
+
+        <!-- 中央タイトル -->
+        <div class="center-title">日本巡礼</div>
+
+        <!-- ※ お札型目次は削除済み -->
+
+    </div>
+    <script src="script.js"></script>
+    <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+
+</html>

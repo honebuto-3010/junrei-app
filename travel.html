@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="日本の神社やお寺を探訪する">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food.css"> <!-- 同じデザインを使う -->
+    <title>日本巡礼 ─ 巡礼記</title>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-ofuda">
+        <a href="travel.html" class="ofuda-mini tilt1"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">旅</div></a>
+        <a href="food.html" class="ofuda-mini tilt2"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">食</div></a>
+        <a href="history.html" class="ofuda-mini tilt3"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">歴</div></a>
+        <a href="manner.html" class="ofuda-mini tilt1"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">作</div></a>
+        <a href="national.html" class="ofuda-mini tilt2"><div class="ofuda-tape-mini"></div><div class="ofuda-mini-title">名</div></a>
+    </div>
+
+    <div class="header-logo">日本巡礼</div>
+
+    <div id="menu">
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+    </div>
+</header>
+
+<div class="mag-header">
+    <h2>直稔の巡礼記 ─ 訪れた名社・名刹</h2>
+</div>
+
+<section class="mag-article">
+    <p class="mag-text">
+        巡礼の旅で訪れた寺社や風景を記録できます。
+        写真を撮影し、コメントを添えて保存すると、下の巡礼記一覧に追加されます。
+    </p>
+</section>
+
+<!-- ▼ 旅レポートの撮影フォーム（food.html と同じ構造） -->
+<section class="mag-article">
+    <h3>巡礼記を追加する</h3>
+
+    <p class="mag-text">スマホで撮影して、そのまま旅レポートに追加できます。</p>
+
+    <input type="file" id="travelPhoto" accept="image/*" capture="camera">
+
+    <img id="previewTravel" style="width:100%; max-width:300px; margin-top:10px; display:block;">
+
+    <label class="mag-text">寺社名・場所</label>
+    <input type="text" id="travelTitle" class="food-input">
+
+    <label class="mag-text">感想・記録</label>
+    <textarea id="travelComment" class="food-textarea"></textarea>
+
+    <button id="saveTravel" class="food-button">保存する</button>
+</section>
+
+<!-- ▼ 自動追加される旅レポート -->
+<div id="travelList"></div>
+
+<section class="mag-article">
+    <h3>巡礼を続ける理由</h3>
+    <p class="mag-text">
+        巡礼は、ただの旅ではなく心の旅でもある。
+        その土地の空気、人の温かさ、そして自分自身の変化を感じながら、
+        これからも歩み続けたいと思っている。
+    </p>
+
+<div class="bottom-nav">
+    <a href="index.html" class="bottom-item">
+        <img src="/日本巡礼/images/icon_150381_64.png" class="bottom-icon">
+        <span class="bottom-label">Home</span>
+    </a>
+</div>
+
+</section>
+
+<script src="travel.js"></script>
+
+</body>
+</html>

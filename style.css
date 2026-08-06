@@ -1,0 +1,390 @@
+@charset "utf-8";
+
+/* ============================
+   リセット
+============================ */
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+body.top-page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ============================
+   透明ヘッダー
+============================ */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1000;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0)
+    );
+    backdrop-filter: blur(4px);
+}
+
+/* ロゴ */
+.header-logo {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    color: #fff;
+    pointer-events: none;
+    margin-right: 100px;
+}
+
+/* ============================
+   ヘッダーに貼るミニお札（5枚）
+============================ */
+.header-ofuda {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    z-index: 1200;
+    margin-top: 50px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+.header-ofuda::-webkit-scrollbar {
+    display: none;
+}
+
+.ofuda-mini {
+    width: 45px;
+    height: 120px;
+    background: #fffdf7;
+    border: 2px solid #d6452f;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.ofuda-mini-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 18px;
+    color: #8b2a1c;
+    font-family: "Yu Mincho", serif;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ofuda-tape-mini {
+    width: 30px;
+    height: 12px;
+    background: rgba(255,255,200,0.8);
+    border-radius: 3px;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tilt1 { transform: rotate(-3deg); }
+.tilt2 { transform: rotate(2deg); }
+.tilt3 { transform: rotate(-1deg); }
+
+/* ============================
+   ハンバーガーメニュー
+============================ */
+#menu {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+    background: rgba(214, 69, 47, 0.15);
+    border: 1px solid rgba(214,69,47,0.35);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menubar {
+   position: absolute;
+   width: 45px;
+   height: 5px;
+   border-radius: 3px;;
+   background: #fff;
+   transition: 0.4s ease;
+   z-index: 200;
+}
+
+.menubar:nth-of-type(1) {top: 22px;}
+.menubar:nth-of-type(2) {top: 33px;}
+.menubar:nth-of-type(3) {top: 44px;}
+
+.close:nth-of-type(1) {top: 33px; transform: rotate(-45deg);}
+.close:nth-of-type(2) {opacity: 0;}
+.close:nth-of-type(3) {top: 33px; transform: rotate(45deg);}
+
+/* ============================
+   メニュー展開
+============================ */
+.menu-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    padding: 80px 40px;
+    transition: 0.5s ease;
+    z-index: 900;
+}
+
+.menu-links.open {
+    right: 0;
+}
+
+.menu-links ul li {
+    margin: 20px 0;
+    padding: 20px 10px;
+    font-size: 20px;
+    font-family: "Noto Serif JP", serif;
+    letter-spacing: 0.05em;
+}
+
+.menu-links ul li:hover {
+    color: tomato;
+}
+
+/* ============================
+   トップページ背景（4枚グリッド）
+============================ */
+.top-page {
+    position: relative;
+    height: 100svh;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 背景専用グリッド */
+.bg-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 200px);
+    gap: 10px;
+    width: 100%;
+    height: 100svh;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .bg-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 300px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bg-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+/* スマホ・タブレットでミニお札を非表示 */
+@media (max-width: 1024px) {
+    .header-ofuda {
+        display: none;
+    }
+}
+
+/* 背景画像 */
+.item1, .item2, .item3, .item4 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    filter: brightness(70%);
+}
+
+.item1 {
+    background-image: url(images/darkness_s-koto-in-g94becd531_640.jpg);
+}
+.item2 {
+    background-image: url(images/photo-1589870229205-c6c9f54db7b8.jpg);
+}
+.item3 {
+    background-image: url(images/oadtz-fushimi-inari-shrine-g90ffcba87_640.jpg);
+}
+.item4 {
+    background-image: url(images/yamabon-koyasan-temple-g7fa865797_640.jpg);
+}
+
+/* 朱色フィルター */
+.bg-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(214, 69, 47, 0.25);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ============================
+   中央タイトル
+============================ */
+.center-title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: "Yu Mincho", serif;
+    font-size: 60px;
+    letter-spacing: 0.25em;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    padding: 20px 10px;
+    border-radius: 10px;
+    z-index: 500;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .center-title {
+        font-size: 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .center-title {
+        font-size: 100px;
+    }
+}
+
+.jp {
+    color: #333;
+}
+
+/* ============================
+   共通ページ用（travel.html など）
+============================ */
+.mag-header h2 {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 0.15em;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #8b6f47;
+    margin-bottom: 40px;
+}
+
+.mag-article {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    background: #fdfaf3;
+    padding: 30px;
+    border: 1px solid #c8b79a;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.mag-text {
+    font-size: 18px;
+    text-indent: 1em;
+    margin-bottom: 1.4em;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 28px,
+        rgba(0,0,0,0.05) 29px
+    );
+    padding: 5px 3px;
+}
+
+.float-photo {
+    width: 45%;
+    float: left;
+    margin: 0 22px 18px 0;
+    border-radius: 6px;
+    filter: sepia(15%) contrast(1.1);
+    object-fit: cover;
+}
+
+.mag-article::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.spot-list li {
+    margin-bottom: 10px;
+    padding-left: 0.5em;
+    border-left: 4px solid #c8b79a;
+}
+
+.spot-name {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.spot-desc {
+    display: block;
+    font-size: 15px;
+    color: #5a4a30;
+}
+
+.next-link {
+    text-align: right;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+.next-link a {
+    color: #8b6f47;
+    border-bottom: 1px dotted #8b6f47;
+}
+
+.next-link a:hover {
+    color: #b33a3a;
+    border-bottom: 1px solid #b33a3a;
+}
+
+.menubar.close {
+    background-color: red !important;
+}

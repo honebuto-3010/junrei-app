@@ -1,0 +1,117 @@
+@charset "utf-8";
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mag-header h2 {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 0.15em;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #8b6f47;
+    margin-bottom: 40px;
+}
+
+/* 記事全体の枠 */
+.mag-article {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fdfaf3;
+    padding: 30px;
+    border: 1px solid #c8b79a;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.mag-article h3 {
+    font-size: 22px;
+    border-left: 6px solid #8b6f47;
+    padding-left: 12px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* 本文（雑誌風の読みやすいスタイル） */
+.mag-text {
+    font-size: 18px;
+    text-indent: 1em;
+    margin-bottom: 1.4em;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 28px,
+        rgba(0,0,0,0.05) 29px
+    );
+    padding: 5px 3px;
+}
+
+/* 名社・名刹リスト */
+.spot-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 25px 0;
+}
+
+.spot-list li {
+    margin-bottom: 10px;
+    padding-left: 0.5em;
+    border-left: 3px solid #c8b79a;
+}
+
+.spot-name {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.spot-desc {
+    display: block;
+    font-size: 15px;
+    color: #5a4a30;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f7f4ef;
+    border-top: 1px solid #d8d3c5;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+.bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 80px;
+    padding: 6px 0;
+}
+
+.bottom-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.bottom-label {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #4a4a4a;
+    font-family: "Noto Serif JP", serif;
+}

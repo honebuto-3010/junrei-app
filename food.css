@@ -1,0 +1,196 @@
+@charset "utf-8";
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ============================
+   グルメ：導入文
+============================ */
+.food-lead {
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 5px solid #c8b79a;
+    border-radius: 4px;
+}
+
+/* ============================
+   グルメ：料理写真（左寄せ）
+============================ */
+.food-photo {
+    width: 45%;
+    float: left;
+    margin: 0 22px 18px 0;
+    border-radius: 6px;
+    filter: sepia(10%) contrast(1.05);
+    object-fit: cover;
+}
+
+/* ============================
+   グルメ：料理写真（右寄せ）
+============================ */
+.food-photo-right {
+    width: 45%;
+    float: right;
+    margin: 0 0 18px 22px;
+    border-radius: 6px;
+    filter: sepia(10%) contrast(1.05);
+    object-fit: cover;
+}
+
+/* ============================
+   グルメ：料理名の見出し
+============================ */
+.food-item-title {
+    font-size: 24px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-left: 6px solid #8b6f47;
+    padding-left: 12px;
+    letter-spacing: 0.05em;
+}
+
+/* ============================
+   旅グルメ入力フォーム（和風デザイン）
+============================ */
+
+/* 入力フォーム全体の統一 */
+.food-input,
+.food-textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 14px;
+    margin: 10px 0 20px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    border: 2px solid #d6c9b6;        /* 和紙の縁色 */
+    border-radius: 6px;
+    background: #faf7f2;              /* 和紙風の淡い色 */
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.08);
+}
+
+/* テキストエリア（高さ調整） */
+.food-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* ラベル（mag-text と統一） */
+.mag-article label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.1rem;
+    color: #5a4a3b;
+}
+
+/* 撮影プレビュー画像 */
+#previewFood {
+    border: 2px solid #d6c9b6;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 保存ボタン（和風の赤系） */
+.food-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.1rem;
+    background: #b33a3a;              /* お札の赤系に合わせる */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.food-button:hover {
+    background: #8e2e2e;
+}
+
+.article-controls {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.article-controls button {
+    background: #b33a3a;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.article-controls button:hover {
+    background: #8e2e2e;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f7f4ef;
+    border-top: 1px solid #d8d3c5;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+.bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 80px;
+    padding: 6px 0;
+}
+
+.bottom-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.bottom-label {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #4a4a4a;
+    font-family: "Noto Serif JP", serif;
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+    .food-input,
+    .food-textarea {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    #previewFood {
+        max-width: 100%;
+    }
+}
