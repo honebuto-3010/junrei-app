@@ -28,7 +28,8 @@ body.top-page {
 /* ============================
    透明ヘッダー
 ============================ */
-.site-header {
+/* トップページ専用透明ヘッダー */
+body.top-page .site-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -47,6 +48,7 @@ body.top-page {
     );
     backdrop-filter: blur(4px);
 }
+
 
 /* ロゴ */
 .header-logo {
