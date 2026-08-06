@@ -395,3 +395,7 @@ body.sub-page .header-logo {
     white-space: nowrap;
     margin-right: 40px;
 }
+/* サブページではハンバーガーメニューを非表示 */
+body.sub-page #menu {
+    display: none !important;
+}
