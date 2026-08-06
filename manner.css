@@ -82,6 +82,7 @@ body {
 /* NG 行動：本文の注意アイコン */
 .ng {
     padding-left: 0;
+    text-indent: 0;
 }
 
 .ng-icon {
@@ -175,5 +176,8 @@ body {
         font-size: 20px;
         margin-top: 25px;
         margin-bottom: 12px;
+    }
+    .ng-icon {
+        font-size: 18px;
     }
 }
