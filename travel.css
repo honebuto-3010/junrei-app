@@ -134,3 +134,11 @@ a {
     color: #4a4a4a;
     font-family: "Noto Serif JP", serif;
 }
+/* サブページ用ヘッダー（白背景） */
+body.sub-page .site-header {
+    position: static;
+    background: #f7f3e9;
+    border-bottom: 1px solid #d8d3c5;
+    padding: 15px 25px;
+    height: auto;
+}
