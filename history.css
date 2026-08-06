@@ -121,3 +121,73 @@ body {
     color: #4a4a4a;
     font-family: "Noto Serif JP", serif;
 }
+/* ============================
+   スマホ向けレイアウト調整
+   ============================ */
+@media (max-width: 600px) {
+
+    /* 全体の余白をスマホ向けに */
+    body {
+        padding: 20px 10px;
+        line-height: 1.8;
+    }
+
+    /* 見出し（折り返し対策） */
+    .mag-header h2 {
+        font-size: 22px;
+        line-height: 1.4;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        letter-spacing: 0.1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* 記事枠の余白調整 */
+    .mag-article {
+        padding: 20px 15px;
+        margin: 0 10px 40px 10px;
+    }
+
+    /* 写真をスマホ幅にフィット */
+    .float-photo {
+        width: 100%;
+        float: none;
+        margin: 0 0 20px 0;
+    }
+
+    /* 記事内見出し */
+    .mag-article h3 {
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+
+    /* 本文（読みやすさ向上） */
+    .mag-text {
+        font-size: 17px;
+        line-height: 1.8;
+        padding: 6px 4px;
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 26px,
+            rgba(0,0,0,0.05) 27px
+        );
+    }
+
+    /* 下部ナビのサイズ調整 */
+    .bottom-item {
+        width: 70px;
+        padding: 4px 0;
+    }
+
+    .bottom-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom-label {
+        font-size: 11px;
+    }
+}
