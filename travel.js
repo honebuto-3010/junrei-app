@@ -32,16 +32,20 @@ travelPhotoInput.addEventListener("change", () => {
 });
 
 // ▼ 保存処理（旅カテゴリ）
-document.getElementById("saveTravel").addEventListener("click", () => {
+document.getElementById("saveTravel").addEventListener("click", async() => {
     const title = document.getElementById("travelTitle").value;
     const comment = document.getElementById("travelComment").value;
-    const compressedphoto = await compresseImage(photo);
+    const photo = preview.src;
 
     if (!title || !comment || !photo) {
         alert("タイトル・コメント・写真を入力してください");
         return;
     }
-
+    //写真がある場合だけ圧縮する
+    let compressedPhoto = photo;
+    if (photo && photo.startsWith("data:image")) {
+        compressedPhoto = await compressImage(photo);
+    }    
     const data = {
         title,
         comment,
