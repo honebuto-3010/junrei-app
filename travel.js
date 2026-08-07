@@ -32,9 +32,9 @@ document.getElementById("saveTravel").addEventListener("click", () => {
         category: "travel"
     };
 
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
     list.push(data);
-    localStorage.setItem("travelReports", JSON.stringify(list));
+    localStorage.setItem("travelData", JSON.stringify(list));
 
     alert("巡礼記に追加しました！");
     renderTravelList();
@@ -42,7 +42,7 @@ document.getElementById("saveTravel").addEventListener("click", () => {
 
 // ▼ 表示（新しい順）
 function renderTravelList() {
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
 
     // 旅カテゴリだけ表示
     const travelOnly = list.filter(item => item.category === "travel");
@@ -69,7 +69,7 @@ function renderTravelList() {
 function deleteTravelReport(index) {
     if (!confirm("この記事を削除しますか？")) return;
 
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
 
     // 旅カテゴリだけ抽出
     const travelOnly = list.filter(item => item.category === "travel");
@@ -80,7 +80,7 @@ function deleteTravelReport(index) {
     // 元の配列から削除
     const newList = list.filter(item => item !== target);
 
-    localStorage.setItem("travelReports", JSON.stringify(newList));
+    localStorage.setItem("traveldata", JSON.stringify(newList));
 
     renderTravelList();
 }
