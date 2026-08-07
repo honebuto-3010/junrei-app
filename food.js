@@ -29,11 +29,12 @@ document.getElementById("saveFood").addEventListener("click", () => {
         comment,
         photo,
         date: new Date().toLocaleString()
+        category: "food"
     };
 
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
     list.push(data);
-    localStorage.setItem("travelReports", JSON.stringify(list));
+    localStorage.setItem("travelData", JSON.stringify(list));
 
     alert("旅レポートに追加しました！");
     renderFoodList();
@@ -41,10 +42,11 @@ document.getElementById("saveFood").addEventListener("click", () => {
 
 // ▼ food.html に雑誌風で表示（新しい順）
 function renderFoodList() {
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
+    //foodカテゴリだけ表示
+    const foodonly = list.filter(item => item.category === "food");
 
-    // ★ 新しい順に並べ替え
-    list.sort((a, b) => new Date(b.date) - new Date(a.date));
+    foodonly.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const container = document.getElementById("food-list");
 
@@ -66,9 +68,17 @@ function renderFoodList() {
 function deleteFoodReport(index) {
     if (!confirm("この記事を削除しますか？")) return;
 
-    const list = JSON.parse(localStorage.getItem("travelReports") || "[]");
-    list.splice(index, 1);
-    localStorage.setItem("travelReports", JSON.stringify(list));
+    const list = JSON.parse(localStorage.getItem("travelData") || "[]");
+
+    //foodカテゴリだけ抽出
+    const foodonly = list.filter(item => item.category === "food");
+
+    const target = foodonly[index];
+
+    //元の配列から削除
+    const newlist = list.filter(item => item !== target);
+    
+    localStorage.setItem("travelData", JSON.stringify(list));
 
     renderFoodList();
 }
