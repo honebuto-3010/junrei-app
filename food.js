@@ -19,8 +19,8 @@ document.getElementById("saveFood").addEventListener("click", () => {
     const comment = document.getElementById("foodComment").value;
     const photo = preview.src;
 
-    if (!title || !comment || !photo) {
-        alert("タイトル・コメント・写真を入力してください");
+    if (!title || !comment ) {
+        alert("タイトルとコメントを入力してください");
         return;
     }
 
