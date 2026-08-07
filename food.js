@@ -28,7 +28,7 @@ document.getElementById("saveFood").addEventListener("click", () => {
         title,
         comment,
         photo,
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(),
         category: "food"
     };
 
@@ -78,7 +78,7 @@ function deleteFoodReport(index) {
     //元の配列から削除
     const newlist = list.filter(item => item !== target);
     
-    localStorage.setItem("travelData", JSON.stringify(list));
+    localStorage.setItem("travelData", JSON.stringify(newlist));
 
     renderFoodList();
 }
