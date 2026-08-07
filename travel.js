@@ -80,7 +80,7 @@ function deleteTravelReport(index) {
     // 元の配列から削除
     const newList = list.filter(item => item !== target);
 
-    localStorage.setItem("traveldata", JSON.stringify(newList));
+    localStorage.setItem("travelData", JSON.stringify(newList));
 
     renderTravelList();
 }
