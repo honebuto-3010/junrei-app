@@ -44,13 +44,13 @@ document.getElementById("saveFood").addEventListener("click", () => {
 function renderFoodList() {
     const list = JSON.parse(localStorage.getItem("travelData") || "[]");
     //foodカテゴリだけ表示
-    const foodonly = list.filter(item => item.category === "food");
+    const foodOnly = list.filter(item => item.category === "food");
 
-    foodonly.sort((a, b) => new Date(b.date) - new Date(a.date));
+    foodOnly.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const container = document.getElementById("food-list");
 
-    container.innerHTML = list.map((item, index) => `
+    container.innerHTML = foodOnly.map((item, index) => `
         <section class="mag-article">
             <div class="article-controls">
                 <button onclick="deleteFoodReport(${index})">削除</button>
@@ -71,9 +71,9 @@ function deleteFoodReport(index) {
     const list = JSON.parse(localStorage.getItem("travelData") || "[]");
 
     //foodカテゴリだけ抽出
-    const foodonly = list.filter(item => item.category === "food");
+    const foodOnly = list.filter(item => item.category === "food");
 
-    const target = foodonly[index];
+    const target = foodOnly[index];
 
     //元の配列から削除
     const newlist = list.filter(item => item !== target);
