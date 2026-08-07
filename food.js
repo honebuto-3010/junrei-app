@@ -32,16 +32,21 @@ photoInput.addEventListener("change", () => {
 });
 
 // ▼ 保存処理（旅レポートに追加）
-document.getElementById("saveFood").addEventListener("click", () => {
+document.getElementById("saveFood").addEventListener("click", async () => {
     const title = document.getElementById("foodTitle").value;
     const comment = document.getElementById("foodComment").value;
-    const compressedPhoto = await compressImage(photo);
-
+    const photo = preview.src;
+    
     if (!title || !comment ) {
         alert("タイトルとコメントを入力してください");
         return;
     }
-
+    //写真がある場合にだけ圧縮する
+    let compressedPhoto = photo;
+    if (photo && photo.startsWith("data:image")) {
+        compressedPhoto = await compressImage(photo);
+    }
+    
     const data = {
         title,
         comment,
