@@ -35,7 +35,7 @@ travelPhotoInput.addEventListener("change", () => {
 document.getElementById("saveTravel").addEventListener("click", () => {
     const title = document.getElementById("travelTitle").value;
     const comment = document.getElementById("travelComment").value;
-    const photo = previewTravel.src;
+    const compressedphoto = await compresseImage(photo);
 
     if (!title || !comment || !photo) {
         alert("タイトル・コメント・写真を入力してください");
@@ -45,7 +45,7 @@ document.getElementById("saveTravel").addEventListener("click", () => {
     const data = {
         title,
         comment,
-        photo,
+        photo: compressedPhoto,
         date: new Date().toLocaleString(),
         category: "travel"
     };
