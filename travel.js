@@ -35,7 +35,7 @@ travelPhotoInput.addEventListener("change", () => {
 document.getElementById("saveTravel").addEventListener("click", async() => {
     const title = document.getElementById("travelTitle").value;
     const comment = document.getElementById("travelComment").value;
-    const photo = preview.src;
+    const photo = previewTravel.src;
 
     if (!title || !comment || !photo) {
         alert("タイトル・コメント・写真を入力してください");
