@@ -1,3 +1,21 @@
+function compressImage(base64, maxWidth = 800) {
+    return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => {
+            const scale = maxWidth / img.width;
+            const canvas = document.createElement("canvas");
+            canvas.width = maxWidth;
+            canvas.height = img.height * scale;
+
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            resolve(canvas.toDataURL("image/jpeg", 0.7)); // 70%品質
+        };
+        img.src = base64;
+    });
+}
+
 // ▼ 写真プレビュー
 const travelPhotoInput = document.getElementById("travelPhoto");
 const previewTravel = document.getElementById("previewTravel");
