@@ -35,7 +35,7 @@ photoInput.addEventListener("change", () => {
 document.getElementById("saveFood").addEventListener("click", () => {
     const title = document.getElementById("foodTitle").value;
     const comment = document.getElementById("foodComment").value;
-    const photo = preview.src;
+    const compressedPhoto = await compressImage(photo);
 
     if (!title || !comment ) {
         alert("タイトルとコメントを入力してください");
@@ -45,7 +45,7 @@ document.getElementById("saveFood").addEventListener("click", () => {
     const data = {
         title,
         comment,
-        photo,
+        photo: compressedPhoto,
         date: new Date().toLocaleString(),
         category: "food"
     };
